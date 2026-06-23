@@ -1,0 +1,5 @@
+Isla Huar;gastronomico;1200;Los Lagos;Calbuco
+Saltos del Petrohue;aventura;1500;Los Lagos;Puerto Montt
+Volcan Osorno;aventura;2000;Los Lagos;Puerto Octay
+Frutillar Costanera;cultural;800;Los Lagos;Frutillar
+Termas de Puyehue;relajacion;2500;Los Lagos;Puyehue
