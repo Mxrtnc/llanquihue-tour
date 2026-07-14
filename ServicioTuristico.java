@@ -1,29 +1,20 @@
 package model;
 
-// Subclase que representa un paseo lacustre
-public class PaseoLacustre extends ServicioTuristico {
+public class ColaboradorExterno extends RecursoAgencia {
 
-    private String tipoEmbarcacion;
+    private String servicioQueOfrece;
 
-    public PaseoLacustre(String nombre, int duracionHoras, String tipoEmbarcacion) {
-        super(nombre, duracionHoras);
-        this.tipoEmbarcacion = tipoEmbarcacion;
+    public ColaboradorExterno(String nombre, String servicioQueOfrece) {
+        super(nombre);
+        this.servicioQueOfrece = servicioQueOfrece;
     }
 
-    public String getTipoEmbarcacion() {
-        return tipoEmbarcacion;
-    }
-
-    public void setTipoEmbarcacion(String tipoEmbarcacion) {
-        this.tipoEmbarcacion = tipoEmbarcacion;
+    public String getServicioQueOfrece() {
+        return servicioQueOfrece;
     }
 
     @Override
-    public String toString() {
-        return "PaseoLacustre{" +
-                "nombre='" + getNombre() + '\'' +
-                ", duracionHoras=" + getDuracionHoras() +
-                ", tipoEmbarcacion='" + tipoEmbarcacion + '\'' +
-                '}';
+    public String mostrarResumen() {
+        return "Colaborador Externo: " + nombre + " | Servicio: " + servicioQueOfrece;
     }
 }

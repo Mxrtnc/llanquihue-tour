@@ -1,16 +1,31 @@
-# LlanquihueTourApp
+package ui;
 
-## Descripción - Semana 7
-Esta semana se aplicó polimorfismo y colecciones genéricas sobre la jerarquía de clases existente. Se agregó el método mostrarInformacion() a la superclase ServicioTuristico y se sobrescribió en cada subclase. Los objetos se almacenan en una colección List<ServicioTuristico> y se recorren polimórficamente invocando mostrarInformacion() desde referencias del tipo superclase.
+import data.GestorServicios;
+import data.GestorEntidades;
+import model.GuiaTuristico;
+import model.Vehiculo;
+import model.ColaboradorExterno;
 
-## Clases
+// Clase principal del programa
+public class Main {
 
-| Paquete | Clase | Descripción |
-|---------|-------|-------------|
-| model | ServicioTuristico.java | Superclase con método mostrarInformacion() base |
-| model | RutaGastronomica.java | Sobrescribe mostrarInformacion() con sus atributos |
-| model | PaseoLacustre.java | Sobrescribe mostrarInformacion() con sus atributos |
-| model | ExcursionCultural.java | Sobrescribe mostrarInformacion() con sus atributos |
-| data | GestorServicios.java | Colección polimórfica y recorrido con for-each |
-| ui | Main.java | Clase principal de ejecución |
+    public static void main(String[] args) {
 
+        // Crear el gestor y mostrar todos los servicios polimórficamente
+        GestorServicios gestor = new GestorServicios();
+        gestor.mostrarTodos();
+
+        // Semana 8: nuevas entidades gestionadas mediante la interfaz Registrable
+        GestorEntidades gestorEntidades = new GestorEntidades();
+        gestorEntidades.agregarEntidad(new GuiaTuristico("Pedro Soto", "Espanol", 5));
+        gestorEntidades.agregarEntidad(new Vehiculo("Minibus Mercedes", "AB-CD-12", 20));
+        gestorEntidades.agregarEntidad(new ColaboradorExterno("Restaurante El Fogon", "Alimentacion"));
+
+        System.out.println("\n=== Entidades registradas (Semana 8) ===");
+        gestorEntidades.mostrarTodas();
+
+        // Se abre la interfaz grafica para ingresar y visualizar nuevas entidades
+        GestorEntidadesGUI gui = new GestorEntidadesGUI(gestorEntidades);
+        gui.iniciar();
+    }
+}

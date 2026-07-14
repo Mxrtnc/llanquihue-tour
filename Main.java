@@ -1,37 +1,33 @@
 package model;
 
-// Superclase que representa un servicio turístico genérico
-public class ServicioTuristico {
+// Subclase que representa una excursión cultural
+public class ExcursionCultural extends ServicioTuristico {
 
-    private String nombre;
-    private int duracionHoras;
+    private String lugarHistorico;
 
-    public ServicioTuristico(String nombre, int duracionHoras) {
-        this.nombre = nombre;
-        this.duracionHoras = duracionHoras;
+    public ExcursionCultural(String nombre, int duracionHoras, String lugarHistorico) {
+        super(nombre, duracionHoras);
+        this.lugarHistorico = lugarHistorico;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getLugarHistorico() {
+        return lugarHistorico;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setLugarHistorico(String lugarHistorico) {
+        this.lugarHistorico = lugarHistorico;
     }
 
-    public int getDuracionHoras() {
-        return duracionHoras;
-    }
-
-    public void setDuracionHoras(int duracionHoras) {
-        this.duracionHoras = duracionHoras;
+    @Override
+    public void mostrarInformacion() {
+        System.out.println("[Excursión Cultural] " + getNombre() +
+                " | Duración: " + getDuracionHoras() + " horas" +
+                " | Lugar histórico: " + lugarHistorico);
     }
 
     @Override
     public String toString() {
-        return "ServicioTuristico{" +
-                "nombre='" + nombre + '\'' +
-                ", duracionHoras=" + duracionHoras +
-                '}';
+        return "ExcursionCultural{nombre='" + getNombre() + "', duracionHoras=" + getDuracionHoras() +
+                ", lugarHistorico='" + lugarHistorico + "'}";
     }
 }

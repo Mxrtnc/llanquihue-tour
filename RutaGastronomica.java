@@ -1,29 +1,27 @@
 package model;
 
-// Subclase que representa una ruta gastronómica
-public class RutaGastronomica extends ServicioTuristico {
+public class GuiaTuristico extends RecursoAgencia {
 
-    private int numeroDeParadas;
+    private String idioma;
+    private int anosExperiencia;
 
-    public RutaGastronomica(String nombre, int duracionHoras, int numeroDeParadas) {
-        super(nombre, duracionHoras);
-        this.numeroDeParadas = numeroDeParadas;
+    public GuiaTuristico(String nombre, String idioma, int anosExperiencia) {
+        super(nombre);
+        this.idioma = idioma;
+        this.anosExperiencia = anosExperiencia;
     }
 
-    public int getNumeroDeParadas() {
-        return numeroDeParadas;
+    public String getIdioma() {
+        return idioma;
     }
 
-    public void setNumeroDeParadas(int numeroDeParadas) {
-        this.numeroDeParadas = numeroDeParadas;
+    public int getAnosExperiencia() {
+        return anosExperiencia;
     }
 
     @Override
-    public String toString() {
-        return "RutaGastronomica{" +
-                "nombre='" + getNombre() + '\'' +
-                ", duracionHoras=" + getDuracionHoras() +
-                ", numeroDeParadas=" + numeroDeParadas +
-                '}';
+    public String mostrarResumen() {
+        return "Guia Turistico: " + nombre + " | Idioma: " + idioma
+                + " | Experiencia: " + anosExperiencia + " anios";
     }
 }
